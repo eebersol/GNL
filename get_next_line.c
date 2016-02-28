@@ -6,11 +6,10 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 17:12:03 by eebersol          #+#    #+#             */
-/*   Updated: 2016/01/25 19:53:19 by eebersol         ###   ########.fr       */
+/*   Updated: 2016/02/28 21:18:02 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/nfs/zfs-student-4/users/eebersol/GNL/Libft/libft.h"
 #include "get_next_line.h"
 
 static int	ft_concat_buff(char **t_buff, char **line)
@@ -25,9 +24,9 @@ static int	ft_concat_buff(char **t_buff, char **line)
 
 int			get_next_line(const int fd, char **line)
 {
-	char	*t_buff[256];
-	char	buff[BUFF_SIZE + 1];
-	int		read_the_ret;
+	static char	*t_buff[256];
+	char		buff[BUFF_SIZE + 1];
+	int			read_the_ret;
 
 	if (line == NULL || fd < 0 || fd > 255)
 		return (-1);
