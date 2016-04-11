@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "../includes/libft.h"
+#include <stdio.h>
 
 char	*ft_freejoin(char *s1, char *s2)
 {

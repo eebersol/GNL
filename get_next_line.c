@@ -26,23 +26,23 @@ int			get_next_line(const int fd, char **line)
 {
 	static char	*t_buff[256];
 	char		buff[BUFF_SIZE + 1];
-	int			read_the_ret;
+	int			ret;
 
 	if (line == NULL || fd < 0 || fd > 255)
 		return (-1);
 	if (t_buff[fd] && t_buff[fd][0] && (ft_strchr(t_buff[fd], '\n') != NULL))
 		return (ft_concat_buff(&(t_buff[fd]), line));
-	while ((read_the_ret = read(fd, buff, BUFF_SIZE)) > 0)
+	while ((ret = read(fd, buff, BUFF_SIZE)) > 0)
 	{
-		buff[read_the_ret] = '\0';
+		buff[ret] = '\0';
 		if ((t_buff[fd] = ft_freejoin(t_buff[fd], buff)) == NULL)
 			return (-1);
 		if (ft_strchr(t_buff[fd], '\n') != NULL)
 			return (ft_concat_buff(&(t_buff[fd]), line));
 	}
-	if (read_the_ret == -1)
+	if (ret == -1)
 		return (-1);
-	if (t_buff[fd] && *(t_buff[fd]))
+	if (t_buff[fd] && t_buff[fd][0])
 	{
 		*line = ft_strdup(t_buff[fd]);
 		ft_strdel(&(t_buff[fd]));

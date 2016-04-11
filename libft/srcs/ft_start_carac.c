@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "../includes/libft.h"
 
 char	*ft_start_carac(char const *str, int i, int len)
 {

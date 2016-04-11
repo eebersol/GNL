@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "../includes/libft.h"
 
 int		ft_sign_int(int nbr)
 {
